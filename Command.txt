@@ -1,47 +1,28 @@
-echo ===============================================================================
-echo 美郷雲海の実効
-echo ===============================================================================
-
-echo "YouTube のダウンロード"
-: > /users/uchukamen/launchd/unkai_misato/out_download.txt; 
-: > /users/uchukamen/launchd/unkai_misato/err_download.txt
-plutil -lint ~/library/launchagents/unkai_misato/download.plist;
-launchctl unload ~/library/launchagents/unkai_misato/download.plist;
-launchctl load ~/library/launchagents/unkai_misato/download.plist
-
-echo "Tweet Timelapse"
-plutil -lint ~/library/launchagents/unkai_misato/tweet_timelapse.plist
-: > /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt ;
-: > /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt
-launchctl unload ~/library/launchagents/unkai_misato/tweet_timelapse.plist;
-launchctl load ~/library/launchagents/unkai_misato/tweet_timelapse.plist
-
 ===============================================================================
 ダウンロード
 ===============================================================================
-echo "YouTube のダウンロード"
-: > /users/uchukamen/launchd/unkai_misato/out_download.txt; 
-: > /users/uchukamen/launchd/unkai_misato/err_download.txt
-plutil -lint ~/library/launchagents/unkai_misato/download.plist;
-launchctl unload ~/library/launchagents/unkai_misato/download.plist;
-launchctl load ~/library/launchagents/unkai_misato/download.plist
+: > /users/uchukamen/launchd/test_launch/out_download.txt; 
+: > /users/uchukamen/launchd/test_launch/err_download.txt
+plutil -lint /library/launchagents/com.uchukamen.testlaunch.plist;
+launchctl unload /library/launchagents/com.uchukamen.testlaunch.plist;
+launchctl load /library/launchagents/com.uchukamen.testlaunch.plist;
 
 start/stop
 plistでload済みのjobはlabelを指定して起動/停止を行う.
-launchctl start unkai_misato.download
-launchctl stop  unkai_misato.download
+launchctl start test_launch.opencv1
+launchctl stop  test_launch.opencv1
 
 List
 launchctl list |grep -i unkai_misato
 
 
 ログを確認
-cat /users/uchukamen/launchd/unkai_misato/out_CreateTimeLapse.txt; 
-cat /users/uchukamen/launchd/unkai_misato/err_CreateTimeLapse.txt
+cat /users/uchukamen/launchd/test_launch/out_test_launch.txt; 
+cat /users/uchukamen/launchd/test_launch/err_test_launch.txt
 
 ログを消去
-: > /users/uchukamen/launchd/unkai_misato/out_CreateTimeLapse.txt ;
-: > /users/uchukamen/launchd/unkai_misato/err_CreateTimeLapse.txt
+: > /users/uchukamen/launchd/test_launch/out_test_launch.txt ;
+: > /users/uchukamen/launchd/test_launch/err_test_launch.txt
 
 ===============================================================================
 Tweet Timelapse
@@ -61,9 +42,9 @@ List
 launchctl list |grep -i unkai
 
 ログを確認
-cat /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt; 
-cat /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt
+cat /users/uchukamen/launchd/test_launch/out_test_launch.txt; 
+cat /users/uchukamen/launchd/test_launch/err_test_launch.txt
 
 ログを消去
-: > /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt ;
-: > /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt
+: > /users/uchukamen/launchd/test_launch/out_test_launch.txt ;
+: > /users/uchukamen/launchd/test_launch/err_test_launch.txt
