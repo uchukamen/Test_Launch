@@ -4,13 +4,13 @@
 			"path": "."
 		},
 		{
-			"path": "../../../Documents/Unkai_Misato"
-		},
-		{
 			"path": "../../../Library/LaunchAgents/unkai_misato"
 		},
 		{
 			"path": "../../../launchd/unkai_misato"
+		},
+		{
+			"path": "../../../../../Library/LaunchAgents"
 		}
 	],
 	"launch": {
