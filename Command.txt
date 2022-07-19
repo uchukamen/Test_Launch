@@ -1,0 +1,69 @@
+echo ===============================================================================
+echo 美郷雲海の実効
+echo ===============================================================================
+
+echo "YouTube のダウンロード"
+: > /users/uchukamen/launchd/unkai_misato/out_download.txt; 
+: > /users/uchukamen/launchd/unkai_misato/err_download.txt
+plutil -lint ~/library/launchagents/unkai_misato/download.plist;
+launchctl unload ~/library/launchagents/unkai_misato/download.plist;
+launchctl load ~/library/launchagents/unkai_misato/download.plist
+
+echo "Tweet Timelapse"
+plutil -lint ~/library/launchagents/unkai_misato/tweet_timelapse.plist
+: > /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt ;
+: > /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt
+launchctl unload ~/library/launchagents/unkai_misato/tweet_timelapse.plist;
+launchctl load ~/library/launchagents/unkai_misato/tweet_timelapse.plist
+
+===============================================================================
+ダウンロード
+===============================================================================
+echo "YouTube のダウンロード"
+: > /users/uchukamen/launchd/unkai_misato/out_download.txt; 
+: > /users/uchukamen/launchd/unkai_misato/err_download.txt
+plutil -lint ~/library/launchagents/unkai_misato/download.plist;
+launchctl unload ~/library/launchagents/unkai_misato/download.plist;
+launchctl load ~/library/launchagents/unkai_misato/download.plist
+
+start/stop
+plistでload済みのjobはlabelを指定して起動/停止を行う.
+launchctl start unkai_misato.download
+launchctl stop  unkai_misato.download
+
+List
+launchctl list |grep -i unkai_misato
+
+
+ログを確認
+cat /users/uchukamen/launchd/unkai_misato/out_CreateTimeLapse.txt; 
+cat /users/uchukamen/launchd/unkai_misato/err_CreateTimeLapse.txt
+
+ログを消去
+: > /users/uchukamen/launchd/unkai_misato/out_CreateTimeLapse.txt ;
+: > /users/uchukamen/launchd/unkai_misato/err_CreateTimeLapse.txt
+
+===============================================================================
+Tweet Timelapse
+===============================================================================
+echo "Tweet Timelapse"
+plutil -lint ~/library/launchagents/unkai_misato/tweet_timelapse.plist
+: > /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt ;
+: > /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt
+launchctl unload ~/library/launchagents/unkai_misato/tweet_timelapse.plist;
+launchctl load ~/library/launchagents/unkai_misato/tweet_timelapse.plist
+
+start/stop
+plistでload済みのjobはlabelを指定して起動/停止を行う.
+launchctl start unkai_misato.tweet_timelapse
+
+List
+launchctl list |grep -i unkai
+
+ログを確認
+cat /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt; 
+cat /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt
+
+ログを消去
+: > /users/uchukamen/launchd/unkai_misato/out_tweet_timelapse.txt ;
+: > /users/uchukamen/launchd/unkai_misato/err_tweet_timelapse.txt

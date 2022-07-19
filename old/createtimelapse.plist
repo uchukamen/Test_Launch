@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>Label</key>
+        <string>unkai_misato.CreateTimeLapse</string>
+        <key>ProgramArguments</key>
+        <array>
+                <string>/usr/local/bin/python3</string>
+                <string>/users/uchukamen/Desktop/Python/unkai_misato/CreateTimeLapse.py</string>
+        </array>
+
+
+<!-- 5分ごと -->
+        <key>StartInterval</key>
+        <integer>300</integer>
+        
+<!-- 30分ごと -->
+	<!-- <key>StartCalendarInterval</key>
+        <array>
+                <dict>
+                        <key>Minute</key>
+                        <integer>0</integer>
+                </dict>
+                <dict>
+                        <key>Minute</key>
+                        <integer>30</integer>
+                </dict>
+        </array> -->
+	
+        <key>StandardErrorPath</key>
+        <string>/users/uchukamen/launchd/unkai.misato/err_CreateTimeLapse.txt</string>
+        <key>StandardOutPath</key>
+        <string>/users/uchukamen/launchd/unkai.misato/out_CreateTimeLapse.txt</string>
+        <key>UserName</key>
+        <string>uchukamen</string>
+        <key>WorkingDirectory</key>
+        <string>/users/uchukamen/documents/unkai_misato</string>
+</dict>
+</plist>
+
